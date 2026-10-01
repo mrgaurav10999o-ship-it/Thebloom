@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="THE BLOOM - Handmade flowers, keychains and DIY flower kits">
+<title>THE BLOOM | Handmade with Love</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap');
+
+:root{
+  --bg:#f8f4ec;
+  --cream:#fffdf8;
+  --green:#243126;
+  --sage:#6d8b68;
+  --pink:#d9a6a6;
+  --text:#243126;
+  --muted:#70776f;
+  --border:#e7dfd2;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:
+  radial-gradient(circle at 10% 10%,#ffffff 0,transparent 30%),
+  radial-gradient(circle at 90% 70%,#f0dfd7 0,transparent 30%),
+  var(--bg);
+  color:var(--text);
+  font-family:Inter,Arial,sans-serif;
+  overflow-x:hidden;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* NAVBAR */
+
+nav{
+  position:fixed;
+  top:18px;
+  left:50%;
+  transform:translateX(-50%);
+  width:92%;
+  max-width:1100px;
+  z-index:100;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 18px 12px 22px;
+  border-radius:50px;
+  background:rgba(255,253,248,.78);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,.8);
+  box-shadow:0 15px 40px rgba(40,50,40,.10);
+}
+
+.logo{
+  font-family:"DM Serif Display",serif;
+  font-size:24px;
+  letter-spacing:1px;
+}
+
+.nav-links{
+  display:flex;
+  gap:25px;
+  font-size:13px;
+  font-weight:600;
+  color:#566055;
+}
+
+.nav-links a:hover{
+  color:var(--sage);
+}
+
+.nav-button{
+  background:var(--green);
+  color:white;
+  padding:11px 17px;
+  border-radius:30px;
+  font-size:12px;
+  font-weight:700;
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:130px 20px 80px;
+  overflow:hidden;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  width:450px;
+  height:450px;
+  border-radius:50%;
+  background:#dce8d8;
+  left:-170px;
+  top:180px;
+  filter:blur(4px);
+  opacity:.7;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:400px;
+  height:400px;
+  border-radius:50%;
+  background:#eed5d5;
+  right:-150px;
+  bottom:50px;
+  filter:blur(4px);
+  opacity:.6;
+}
+
+.hero-content{
+  max-width:850px;
+  position:relative;
+  z-index:5;
+}
+
+.small-title{
+  text-transform:uppercase;
+  letter-spacing:5px;
+  font-size:11px;
+  font-weight:700;
+  color:var(--sage);
+}
+
+.hero h1{
+  font-family:"DM Serif Display",serif;
+  font-size:clamp(65px,12vw,150px);
+  font-weight:400;
+  line-height:.85;
+  margin:25px 0;
+  letter-spacing:-3px;
+}
+
+.hero p{
+  max-width:600px;
+  margin:auto;
+  color:var(--muted);
+  line-height:1.8;
+  font-size:15px;
+}
+
+.buttons{
+  margin-top:30px;
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.button{
+  padding:14px 22px;
+  border-radius:40px;
+  font-size:13px;
+  font-weight:700;
+  border:1px solid var(--border);
+  transition:.3s;
+}
+
+.button:hover{
+  transform:translateY(-3px);
+}
+
+.primary{
+  background:var(--green);
+  color:white;
+  border-color:var(--green);
+}
+
+.whatsapp{
+  background:var(--sage);
+  color:white;
+  border-color:var(--sage);
+}
+
+/* FLOATING PRODUCTS */
+
+.floating{
+  position:absolute;
+  z-index:3;
+  object-fit:cover;
+  border-radius:20px;
+  box-shadow:0 25px 50px rgba(35,45,35,.18);
+  pointer-events:none;
+}
+
+.float1{
+  width:115px;
+  height:145px;
+  left:7%;
+  top:28%;
+  animation:floatA 6s ease-in-out infinite;
+  transform:rotate(-8deg);
+}
+
+.float2{
+  width:130px;
+  height:155px;
+  right:8%;
+  top:24%;
+  animation:floatB 7s ease-in-out infinite;
+  transform:rotate(8deg);
+}
+
+.float3{
+  width:100px;
+  height:130px;
+  left:17%;
+  bottom:12%;
+  animation:floatB 6s ease-in-out infinite;
+}
+
+.float4{
+  width:100px;
+  height:130px;
+  right:17%;
+  bottom:12%;
+  animation:floatA 7s ease-in-out infinite;
+}
+
+@keyframes floatA{
+  0%,100%{
+    transform:translateY(0) rotate(-8deg);
+  }
+  50%{
+    transform:translateY(-25px) rotate(5deg);
+  }
+}
+
+@keyframes floatB{
+  0%,100%{
+    transform:translateY(0) rotate(8deg);
+  }
+  50%{
+    transform:translateY(25px) rotate(-5deg);
+  }
+}
+
+/* SECTIONS */
+
+section{
+  padding:100px 6%;
+}
+
+.section-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:30px;
+  margin-bottom:35px;
+}
+
+.section-header h2{
+  font-family:"DM Serif Display",serif;
+  font-size:52px;
+  font-weight:400;
+}
+
+.section-header p{
+  max-width:420px;
+  color:var(--muted);
+  line-height:1.7;
+  font-size:14px;
+}
+
+/* PRODUCTS */
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.product{
+  background:rgba(255,253,248,.85);
+  border:1px solid var(--border);
+  border-radius:25px;
+  padding:12px;
+  transition:.35s;
+  box-shadow:0 15px 35px rgba(40,50,40,.06);
+}
+
+.product:hover{
+  transform:translateY(-10px);
+  box-shadow:0 25px 50px rgba(40,50,40,.14);
+}
+
+.product-image{
+  height:260px;
+  border-radius:18px;
+  overflow:hidden;
+  background:#eee8dc;
+}
+
+.product-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.5s;
+}
+
+.product:hover img{
+  transform:scale(1.06);
+}
+
+.product-info{
+  padding:15px 7px 7px;
+}
+
+.category{
+  color:var(--sage);
+  text-transform:uppercase;
+  font-size:9px;
+  letter-spacing:2px;
+  font-weight:800;
+}
+
+.product h3{
+  font-family:"DM Serif Display",serif;
+  font-size:24px;
+  font-weight:400;
+  margin:7px 0;
+}
+
+.product-bottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:14px;
+}
+
+.price{
+  font-weight:800;
+}
+
+.add{
+  border:none;
+  background:var(--green);
+  color:white;
+  padding:10px 15px;
+  border-radius:30px;
+  font-size:11px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* DIY */
+
+.diy-box{
+  background:var(--green);
+  color:white;
+  border-radius:40px;
+  padding:45px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+  overflow:hidden;
+}
+
+.diy-box h2{
+  font-family:"DM Serif Display",serif;
+  font-size:58px;
+  font-weight:400;
+  line-height:.95;
+  margin:12px 0 20px;
+}
+
+.diy-box p{
+  color:#d6ded3;
+  line-height:1.8;
+  font-size:14px;
+}
+
+.diy-image{
+  height:390px;
+  border-radius:28px;
+  overflow:hidden;
+  transform:rotate(2deg);
+  box-shadow:0 30px 60px rgba(0,0,0,.25);
+}
+
+.diy-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* ABOUT */
+
+.about{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+}
+
+.about h2{
+  font-family:"DM Serif Display",serif;
+  font-size:60px;
+  font-weight:400;
+  line-height:.95;
+  margin:12px 0 20px;
+}
+
+.about p{
+  color:var(--muted);
+  line-height:1.8;
+}
+
+.about-image{
+  border-radius:30px;
+  overflow:hidden;
+  height:430px;
+  box-shadow:0 20px 50px rgba(40,50,40,.12);
+}
+
+.about-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* CART */
+
+.cart-button{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:90;
+  background:var(--green);
+  color:white;
+  padding:15px 20px;
+  border-radius:50px;
+  font-size:12px;
+  font-weight:800;
+  box-shadow:0 15px 35px rgba(30,40,30,.25);
+  cursor:pointer;
+}
+
+.cart-count{
+  background:white;
+  color:var(--green);
+  padding:3px 7px;
+  border-radius:50px;
+  margin-left:5px;
+}
+
+/* CART MODAL */
+
+.modal{
+  position:fixed;
+  inset:0;
+  z-index:200;
+  background:rgba(20,25,20,.5);
+  backdrop-filter:blur(8px);
+  display:none;
+  align-items:flex-end;
+  justify-content:center;
+}
+
+.modal.active{
+  display:flex;
+}
+
+.cart-box{
+  width:min(550px,94%);
+  background:var(--cream);
+  border-radius:30px 30px 0 0;
+  padding:28px;
+  max-height:80vh;
+}
+
+.cart-box h2{
+  font-family:"DM Serif Display",serif;
+  font-size:38px;
+  font-weight:400;
+}
+
+.cart-items{
+  margin:20px 0;
+  max-height:300px;
+  overflow-y:auto;
+}
+
+.cart-item{
+  display:flex;
+  justify-content:space-between;
+  padding:14px 0;
+  border-bottom:1px solid var(--border);
+  font-size:13px;
+}
+
+.cart-total{
+  font-size:17px;
+  font-weight:800;
+  margin:15px 0;
+}
+
+.cart-actions{
+  display:flex;
+  gap:10px;
+}
+
+.cart-actions button,
+.cart-actions a{
+  flex:1;
+  padding:14px;
+  border-radius:30px;
+  border:none;
+  text-align:center;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.close{
+  background:#eee8dd;
+}
+
+.order-whatsapp{
+  background:var(--sage);
+  color:white;
+}
+
+/* FOOTER */
+
+footer{
+  border-top:1px solid var(--border);
+  padding:45px 6%;
+  display:flex;
+  justify-content:space-between;
+  color:var(--muted);
+  font-size:12px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .products{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .diy-box,
+  .about{
+    grid-template-columns:1fr;
+  }
+
+  .floating{
+    opacity:.45;
+  }
+}
+
+@media(max-width:600px){
+
+  nav{
+    width:94%;
+  }
+
+  .hero{
+    padding-top:150px;
+  }
+
+  .hero h1{
+    font-size:68px;
+  }
+
+  .float1{
+    left:2%;
+    width:75px;
+    height:100px;
+  }
+
+  .float2{
+    right:2%;
+    width:80px;
+    height:105px;
+  }
+
+  .float3,
+  .float4{
+    display:none;
+  }
+
+  section{
+    padding:70px 5%;
+  }
+
+  .section-header{
+    display:block;
+  }
+
+  .section-header h2{
+    font-size:42px;
+    margin-bottom:10px;
+  }
+
+  .products{
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+
+  .product{
+    border-radius:18px;
+    padding:8px;
+  }
+
+  .product-image{
+    height:190px;
+  }
+
+  .product h3{
+    font-size:20px;
+  }
+
+  .diy-box{
+    padding:25px;
+    border-radius:28px;
+  }
+
+  .diy-box h2{
+    font-size:44px;
+  }
+
+  .diy-image{
+    height:260px;
+  }
+
+  .about h2{
+    font-size:45px;
+  }
+
+  footer{
+    display:block;
+    line-height:2;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+  <a href="#home" class="logo">
+    THE BLOOM
+  </a>
+
+  <div class="nav-links">
+    <a href="#shop">Shop</a>
+    <a href="#diy">DIY Kits</a>
+    <a href="#about">About</a>
+  </div>
+
+  <a
+    class="nav-button"
+    href="https://wa.me/917011396842?text=Hi%20THE%20BLOOM%2C%20I%20want%20to%20place%20an%20order."
+    target="_blank"
+  >
+    WhatsApp Order
+  </a>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+  <img
+    class="floating float1"
+    src="daisy-keychain.jpg"
+    alt="Daisy"
+  >
+
+  <img
+    class="floating float2"
+    src="sunflower-bouquet.jpg"
+    alt="Sunflower"
+  >
+
+  <img
+    class="floating float3"
+    src="tulip-bouquet.jpg"
+    alt="Tulip"
+  >
+
+  <img
+    class="floating float4"
+    src="lotus-keychain.jpg"
+    alt="Lotus"
+  >
+
+  <div class="hero-content">
+
+    <div class="small-title">
+      Handmade • Thoughtful • Forever
+    </div>
+
+    <h1>
+      THE BLOOM
+    </h1>
+
+    <p>
+      Handmade flowers, cute keychains and DIY flower kits —
+      made to bring a little bloom into everyday life.
+    </p>
+
+    <div class="buttons">
+
+      <a href="#shop" class="button primary">
+        Explore Collection
+      </a>
+
+      <a
+        href="https://wa.me/917011396842?text=Hi%20THE%20BLOOM%2C%20I%20want%20to%20place%20an%20order."
+        target="_blank"
+        class="button whatsapp"
+      >
+        WhatsApp Us
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+
+<section id="shop">
+
+  <div class="section-header">
+
+    <div>
+      <div class="small-title">
+        THE COLLECTION
+      </div>
+
+      <h2>
+        Made to bloom.
+      </h2>
+    </div>
+
+    <p>
+      Handmade flowers, beautiful keychains and creative
+      DIY kits. Add your favourite products to the cart.
+    </p>
+
+  </div>
+
+  <div class="products" id="productGrid"></div>
+
+</section>
+
+
+<!-- DIY -->
+
+<section id="diy">
+
+  <div class="diy-box">
+
+    <div>
+
+      <div class="small-title" style="color:#c7d9bd">
+        MAKE YOUR OWN
+      </div>
+
+      <h2>
+        Create your own flower.
+      </h2>
+
+      <p>
+        Choose your favourite flower and make it yourself.
+        Each individual DIY flower kit is only ₹80.
+      </p>
+
+      <div style="margin-top:25px">
+
+        <a
+          href="https://wa.me/917011396842?text=Hi%20THE%20BLOOM%2C%20I%20want%20a%20DIY%20flower%20kit."
+          target="_blank"
+          class="button whatsapp"
+        >
+          Order DIY Kit
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="diy-image">
+
+      <img
+        src="diy-reference.jpg"
+        alt="DIY flower making kits"
+      >
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+  <div class="about">
+
+    <div>
+
+      <div class="small-title">
+        OUR IDEA
+      </div>
+
+      <h2>
+        Flowers that stay a little longer.
+      </h2>
+
+      <p>
+        THE BLOOM creates handmade alternatives to ordinary
+        plastic flowers, with a focus on thoughtful gifting,
+        creativity and making things by hand.
+      </p>
+
+    </div>
+
+    <div class="about-image">
+
+      <img
+        src="lily-bouquet.jpg"
+        alt="THE BLOOM Lily Bouquet"
+      >
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CART BUTTON -->
+
+<div
+  class="cart-button"
+  onclick="openCart()"
+>
+  Cart
+  <span class="cart-count" id="cartCount">0</span>
+</div>
+
+
+<!-- CART -->
+
+<div
+  class="modal"
+  id="cartModal"
+  onclick="closeOutside(event)"
+>
+
+  <div class="cart-box">
+
+    <h2>
+      Your Bloom Cart
+    </h2>
+
+    <div
+      class="cart-items"
+      id="cartItems"
+    >
+      Your cart is empty.
+    </div>
+
+    <div class="cart-total">
+      Total: ₹<span id="cartTotal">0</span>
+    </div>
+
+    <div class="cart-actions">
+
+      <button
+        class="close"
+        onclick="closeCart()"
+      >
+        Close
+      </button>
+
+      <a
+        id="whatsappOrder"
+        class="order-whatsapp"
+        href="#"
+        target="_blank"
+      >
+        Order on WhatsApp
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div>
+    © 2026 THE BLOOM
+  </div>
+
+  <div>
+    WhatsApp: 7011396842
+  </div>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   PRODUCTS
+========================= */
+
+const products = [
+
+  {
+    name:"Tulip Bouquet",
+    price:150,
+    category:"Bouquet",
+    image:"tulip-bouquet.jpg"
+  },
+
+  {
+    name:"Lily Bouquet",
+    price:150,
+    category:"Bouquet",
+    image:"lily-bouquet.jpg"
+  },
+
+  {
+    name:"Sunflower Bouquet",
+    price:200,
+    category:"Bouquet",
+    image:"sunflower-bouquet.jpg"
+  },
+
+  {
+    name:"Lotus Keychain",
+    price:80,
+    category:"Keychain",
+    image:"lotus-keychain.jpg"
+  },
+
+  {
+    name:"Bow Keychain",
+    price:80,
+    category:"Keychain",
+    image:"bow-keychain.jpg"
+  },
+
+  {
+    name:"Cherry Keychain",
+    price:80,
+    category:"Keychain",
+    image:"cherry-keychain.jpg"
+  },
+
+  {
+    name:"Daisy Keychain",
+    price:80,
+    category:"Keychain",
+    image:"daisy-keychain.jpg"
+  },
+
+  {
+    name:"DIY Tulip Flower Kit",
+    price:80,
+    category:"Make Your Own",
+    image:"diy-reference.jpg"
+  },
+
+  {
+    name:"DIY Sunflower Kit",
+    price:80,
+    category:"Make Your Own",
+    image:"diy-reference.jpg"
+  },
+
+  {
+    name:"DIY Daisy Kit",
+    price:80,
+    category:"Make Your Own",
+    image:"diy-reference.jpg"
+  },
+
+  {
+    name:"DIY Lily Kit",
+    price:80,
+    category:"Make Your Own",
+    image:"diy-reference.jpg"
+  },
+
+  {
+    name:"DIY Gerbera Kit",
+    price:80,
+    category:"Make Your Own",
+    image:"diy-reference.jpg"
+  },
+
+  {
+    name:"DIY Leaf Kit",
+    price:80,
+    category:"Make Your Own",
+    image:"diy-reference.jpg"
+  }
+
+];
+
+
+/* =========================
+   PRODUCT DISPLAY
+========================= */
+
+const productGrid =
+document.getElementById("productGrid");
+
+productGrid.innerHTML =
+products.map((product,index)=>`
+
+  <div class="product">
+
+    <div class="product-image">
+
+      <img
+        src="${product.image}"
+        alt="${product.name}"
+        loading="lazy"
+      >
+
+    </div>
+
+    <div class="product-info">
+
+      <div class="category">
+        ${product.category}
+      </div>
+
+      <h3>
+        ${product.name}
+      </h3>
+
+      <div class="product-bottom">
+
+        <div class="price">
+          ₹${product.price}
+        </div>
+
+        <button
+          class="add"
+          onclick="addToCart(${index})"
+        >
+          ADD
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+`).join("");
+
+
+/* =========================
+   CART
+========================= */
+
+let cart = [];
+
+
+function addToCart(index){
+
+  cart.push(products[index]);
+
+  document.getElementById("cartCount")
+  .innerText = cart.length;
+
+  openCart();
+
+}
+
+
+function openCart(){
+
+  renderCart();
+
+  document
+  .getElementById("cartModal")
+  .classList.add("active");
+
+}
+
+
+function closeCart(){
+
+  document
+  .getElementById("cartModal")
+  .classList.remove("active");
+
+}
+
+
+function closeOutside(event){
+
+  if(event.target.id === "cartModal"){
+    closeCart();
+  }
+
+}
+
+
+function renderCart(){
+
+  const cartItems =
+  document.getElementById("cartItems");
+
+  const cartTotal =
+  document.getElementById("cartTotal");
+
+  if(cart.length === 0){
+
+    cartItems.innerHTML =
+    "Your cart is empty.";
+
+    cartTotal.innerText = "0";
+
+    return;
+
+  }
+
+
+  let total = 0;
+
+
+  cartItems.innerHTML =
+  cart.map(product=>{
+
+    total += product.price;
+
+    return `
+
+      <div class="cart-item">
+
+        <span>
+          ${product.name}
+        </span>
+
+        <strong>
+          ₹${product.price}
+        </strong>
+
+      </div>
+
+    `;
+
+  }).join("");
+
+
+  cartTotal.innerText = total;
+
+
+  const orderText =
+
+`Hi THE BLOOM! 🌸
+
+I want to order:
+
+${cart.map(product =>
+"• " + product.name + " — ₹" + product.price
+).join("\n")}
+
+Total: ₹${total}
+
+Please confirm my order.`;
+
+
+  document
+  .getElementById("whatsappOrder")
+  .href =
+  "https://wa.me/917011396842?text="
+  + encodeURIComponent(orderText);
+
+}
+
+
+/* =========================
+   3D CARD EFFECT
+========================= */
+
+document
+.querySelectorAll(".product")
+.forEach(card=>{
+
+  card.addEventListener(
+    "mousemove",
+    function(event){
+
+      if(window.innerWidth < 800)
+      return;
+
+      const rect =
+      card.getBoundingClientRect();
+
+      const x =
+      (event.clientX - rect.left)
+      / rect.width - .5;
+
+      const y =
+      (event.clientY - rect.top)
+      / rect.height - .5;
+
+      card.style.transform =
+      `perspective(800px)
+       rotateX(${-y * 5}deg)
+       rotateY(${x * 5}deg)
+       translateY(-8px)`;
+
+    }
+  );
+
+
+  card.addEventListener(
+    "mouseleave",
+    function(){
+
+      card.style.transform = "";
+
+    }
+  );
+
+});
+
+</script>
+
+</body>
+</html>
